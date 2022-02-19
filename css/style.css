@@ -1,0 +1,545 @@
+*{
+    box-sizing:border-box;
+    margin:0px;
+    padding:0px;
+}
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins-ExtraLight.ttf);
+    
+    src: url(../fonts/Poppins-Light.ttf);
+    src: url(../fonts/Poppins-ExtraLight.ttf);
+    src: url(../fonts/Poppins-Thin.ttf);
+    src: url(../fonts/OFL.txt);
+    src: url(../fonts/Poppins-Black.ttf);
+    src: url(../fonts/Poppins-Medium.ttf);
+    src: url(../fonts/Poppins-Bold.ttf);
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+body{
+    font-family:poppins,sans-serif;
+}
+img{
+    max-width:100%;
+}
+ul,ol{
+    list-style: none;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration:none;
+}
+.container{
+    width:100%;
+    max-width:1140px;
+    min-width:450px;
+    margin:0px auto;
+}
+.flexbox{
+    display:flex;
+    flex-flow:row wrap;
+}
+
+.btn{
+    display:inline-block;
+    background-color:black;
+    border:1px solid black;
+    padding:10px 25px;
+    text-align:center;
+    color:#fff;
+}
+.btn:hover{
+    background-color:#fff;
+    color:black;
+    border:1px solid black;
+    transition:all 0.5s;
+}
+
+/**********Navbar Start***********/
+.navbar{
+    position:sticky;
+    top:0px;
+    z-index:99999;
+    background-color:#fef5ef;
+}
+.navbar-left{
+    width:20%;
+    text-align:center;
+    align-items: center;
+}
+.navbar-right{
+  width:78%;
+  line-height:80px;
+}
+.navbar-right>ul{
+    width:70%;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-start;
+    column-gap:50px;
+}
+.navbar-right>ul>li{
+    position:relative;
+}
+.navbar-right>ul>li>a{
+    padding:25px 13px;
+    color:#24262b;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight:bolder;
+}
+.navbar-right>ul>li>a>i{
+    color:#24262b;
+    font-weight:400;
+    margin-left:3px;
+}
+.navbar-right>div{
+    width:30%;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-end;
+    align-items:center;
+    gap: 10px;
+    
+}
+.navbar-right>div i{
+    position:relative;
+    font-size:20px;
+    color:black;
+    width:45px;
+    height:45px;
+    text-align:center;
+    padding-top:12px;
+}
+.navbar-right>div a:nth-child(1)>i::after,
+.navbar-right>div a:nth-child(2)>i::after{
+    content:"3";
+    position:absolute;
+    right: -3px;
+    top:27%;
+    background-color:#f79837;
+    color:white;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    font-size:15px;
+    padding-top:2px;
+}
+.navbar-right>div a:nth-child(2)>i::after{
+   content:"4";
+}
+.navbar-right>div a:last-of-type>i{
+    border-radius:50%;
+    background-color:rgb(224, 221, 221);
+}
+
+/*Dropdowns*/
+.dropdown{
+    position:absolute;
+    top:100%;
+    left:-20px;
+    width:200px;
+    padding:20px 0px 20px 15px;
+    transform:rotateX(-90deg);
+    transform-origin:top;
+    background-color:white;
+    line-height:30px;
+    z-index:99;
+    box-shadow:0 3px 11px 0 rgb(0 0 0 / 10%);
+}
+.dropdown>li>a{
+    color:#24262b;
+    font-size:14px;
+    font-weight:bolder;
+    padding-right:30px;
+}
+.dropdown_div{
+    column-gap:30px;
+    position:absolute;
+    top:100%;
+    left:-150px;
+    width:740px;
+    padding:20px 15px;
+    transform:rotateX(-90deg);
+    transform-origin:top;
+    line-height:40px;
+    background-color:white;
+    z-index:99;
+    box-shadow:0 3px 11px 0 rgb(0 0 0 / 10%);
+}
+.dropdown_div>div>ul>li>a{
+    color:#24262b;
+    font-size:14px;
+    font-weight:bolder;
+    padding-right:30px;
+}
+.dropdown_div>div>ul>h4>li>a{
+    color:#24262b;
+}
+.dropdown_div>div:last-of-type{
+    margin-left:30px;
+}
+
+/*hovers Start*/
+.navbar-right>ul>li>a:hover{
+    color:#f79837;
+    transition:all 0.5s;
+}
+.navbar-right>ul>li>a:hover i{
+    color:#f79837;
+    transition:all 0.5s;
+}
+.navbar-right>div>a:nth-child(1):hover i,
+.navbar-right>div>a:nth-child(2):hover i{
+    color:#f79837;
+    transition:all 0.5s;
+}
+.navbar-right>div>a:nth-child(4):hover i{
+    color:#f79837;
+    background-color:white;
+    transition:all 0.5s;
+}
+
+.navbar-right>ul>li:hover .dropdown{
+    transform: rotateX(0deg);   
+    transition:all 0.5s;
+}
+
+.navbar-right>ul>li:nth-child(2):hover .dropdown_div{
+    transform: rotateX(0deg);   
+    transition:all 0.5s;
+}
+.dropdown>li>a:hover{
+    color:#f79837;
+    margin-left:10px;
+    padding-right:15px;
+    transition:all 0.5s;
+}
+.dropdown_div>div>ul>li>a:hover{
+    color:#f79837;
+    margin-left:15px;
+    padding-right:15px;
+    transition:all 0.5s;
+}
+
+/*hovers End*/
+
+
+/**********Navbar End***********/
+
+
+/**********Banner Start***********/
+.banner{
+    background-image:url("../images/banner\ background.jpg");
+    background-repeat:no-repeat;
+    background-attachment: center;
+    background-size:cover;
+    overflow:hidden;    
+    height:720px;
+    
+}
+.banner>.container{
+    position:relative;
+    justify-content: flex-start;
+}
+.banner-left{
+    margin-left:-10px;
+    width: 50%;
+    padding:150px 0px;
+}
+.banner-left>h1{
+    color:#0a0d14;
+    font-size:115px;
+    line-height:150px;
+    font-weight:lighter;
+}
+.banner-left>h1 span{
+    color:#fff;
+    font-weight: bold;
+    font-size:150px;
+}
+.banner-left>h3{
+    color:#fff;
+    font-weight:500;
+    font-size:24px;
+}
+.banner-left>li>.btn{
+    margin-top:20px;
+}
+.banner-right{
+    position:absolute;
+    right:50px;
+    top:-40px;
+    width:48%;
+    height:100%;
+    
+    
+}
+
+
+/**********Banner End***********/
+
+
+/**********Collections Start***********/
+.collection{
+    margin-top:100px;
+}
+.item{
+    overflow:hidden;
+    position:relative;
+    width:31%;
+    margin:0px 1%;
+    display:flex;
+    flex-flow:column nowrap;
+    row-gap:30px;
+}
+.item>div{
+    overflow:hidden;
+    position:relative;
+    width:100%;
+}
+.item>div>img{
+    width:100%;
+    height:100%;
+}
+.item>div>div{
+    position:absolute;
+    top:30px;
+    left:15%;
+    line-height:30px;
+}
+.item>div>div>span{
+    display:block;
+    font-weight:bolder;
+    font-size:18px;
+}
+.item:nth-child(1)>div>div>span:first-of-type{
+    color:#f79837;
+}
+.item:nth-child(2)>div>span:first-of-type{
+    color:#f79837;
+    font-size:25px;
+}
+.item:nth-child(3)>div>div>span:last-of-type{
+    color:#f79837;
+}
+
+.item>div>div>.btn{
+    padding:8px 20px;
+    font-size:13px;
+}
+
+.item:nth-child(2)>div{
+    width:80%;
+    position:absolute;
+    bottom:10%;
+    left:10%;
+}
+.item:nth-child(2)>img{
+    width:100%;
+}
+.item:nth-child(2)>div>span{
+    display:block;
+    font-weight:bolder;
+    line-height:30px;
+    font-size:18px;
+}
+
+
+.item>div:hover img{
+    transform:scale(1.1);
+    transition:all 0.5s;
+}
+.item:nth-child(2):hover img{
+    transform:scale(1.1);
+    transition:all 0.5s;
+}
+
+/**********Collections End***********/
+
+/***********Hot Product Start**************/
+.hotproduct>.container{
+    margin-top:60px;
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+    color:#212121;
+    line-height:40px;
+}
+.hotproduct>.container>h2{
+    font-size:36px;
+}
+.hotproduct>.container>span{
+    color:#777c87;
+}
+.hotproduct>.container>ul{
+    display:flex;
+    flex-flow:row wrap;
+    gap:40px;
+    justify-content: center;
+}
+.hotproduct>.container>ul>li{
+    padding-top:20px;
+    padding-bottom:30px;
+}
+.hotproduct>.container>ul>li>a{
+    position:relative;
+    color:#212121;
+    font-weight:bolder;
+    padding:10px 0px;
+}
+.hotproduct>.container>ul>li>a:after{
+    content:"";
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    height:2px;
+    background-color:#f79837;
+    opacity:0;
+}
+
+/*hovers*/
+.hotproduct>.container>ul>li>a:hover{
+    color:#f79837;
+    transition:all 0.5s;
+}
+.hotproduct>.container>ul>li>a:focus:after{
+    opacity:1;
+}
+/***********Hot Product End**************/
+
+
+
+/**********Cards Start***********/
+
+.cards>.container{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-between;
+    row-gap:40px;
+}
+.product-card{
+    display:flex;
+    flex-flow:column nowrap;
+    width:22%;
+    cursor:pointer;
+}
+.image{
+    position:relative;
+    overflow:hidden;
+    height:90%;
+    width:100%;
+}
+.image>img{
+    width:100%;
+}
+.image>img:last-of-type{
+    position:absolute;
+    top:0;
+    left:0;
+    transform:rotateZ(-3deg);
+    opacity:0;
+}
+.image>span{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background-color:#007a58;
+    padding:2px 5px;
+    font-size:12px;
+    color:white;
+}
+.image>.icons{
+    position:absolute;
+    top:10px;
+    right:20px;
+    height:50%;
+    width:50px;
+    display:flex;
+    flex-flow:column nowrap;
+    row-gap: 10px;
+}
+.image>.icons>a>i{
+    color:#212121;
+    font-size:17px;
+    width:40px;
+    height:40px;
+    background-color:#fff;
+    border-radius:50%;
+    text-align:center;
+    padding-top:12px;
+}
+.image>.icons>a:nth-child(2)>i,
+.image>.icons>a:last-of-type>i{
+    opacity:0;
+    transform:translateY(35px);
+}
+.image>.transparent{
+    position:absolute;
+    bottom:0px;
+    left:40px;
+    text-align:center;
+    padding:10px 40px;
+    color:#212121;
+    font-weight:bolder;
+    background-color:#fff;
+    opacity:0;
+}
+
+.content{
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+    
+}
+.content>a{
+    color:#212121;  
+}
+
+
+
+/*hovers*/
+.product-card:hover .image>img:first-of-type{
+    opacity:0;
+    transition:all 0.5s;
+}
+.product-card:hover .image>img:last-of-type{
+    opacity:1;
+    transform:rotateZ(0deg);
+    transform:scale(1.1);
+    transition:all 0.5s;
+}
+.product-card:hover .transparent{
+    opacity:1;
+    bottom:18px;
+    transition:all 0.5s;
+}
+.product-card:hover .image>.icons>a:nth-child(2)>i{
+    opacity:1;
+    transform:translateY(0px);
+    transition:all 0.5s;
+}
+.product-card:hover .image>.icons>a:nth-child(3)>i{
+    opacity:1;
+    transform:translateY(0px);
+    transition:all 0.5s;
+}
+.transparent:hover{
+    color:#f79837;
+    transition:all 0.5s;
+}
+.image>.icons>a>i:hover{
+    background-color:#f79837;
+    color:#fff;
+    transition:all 0.5s;
+}
+
+
+.content>span:hover{
+    color:#f79837;
+    transition:all 0.5s;
+}
+/**********Cards End***********/
